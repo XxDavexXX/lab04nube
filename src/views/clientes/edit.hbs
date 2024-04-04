@@ -1,0 +1,67 @@
+<div class="container p-4" style="margin-top:70px;">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">ACTUALIZAR CLIENTE</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/edit/{{cliente.idcli}}" method="post">
+                        <div class="input-group mt-2">
+                            <label for="name" class="input-group-text">Nombres</label>
+                            <input type="text" class="form-control" name="nomcli" id="nomcli" placeholder="Nombres" value="{{cliente.nomcli}}" autofocus required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="lastname" class="input-group-text">Apellidos</label>
+                            <input type="text" class="form-control" name="apecli" id="apecli" placeholder="Apellidos" required value="{{cliente.apecli}}">
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="age" class="input-group-text">Nro. DNI</label>
+                            <input type="text" class="form-control" name="nrodnicli" id="nrodnicli" placeholder="Nro. DNI" value="{{cliente.nrodnicli}}" required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="age" class="input-group-text">Nro. Telefono</label>
+                            <input type="text" class="form-control" name="telcli" id="telcli" placeholder="Nro. Celular" value="{{cliente.telcli}}" required>
+                        </div>
+
+                        {{!-- <div class="input-group mt-2">
+                            <label for="idrelacion" class="input-group-text">Relación</label>
+                            <select class="form-select" id="idrelacion" name="idrelacion">
+                                {{#each relaciones}}
+                                    <option value="{{id}}" {{#eq id ../cliente.idrelacion}}selected{{/eq}}>{{estado}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="idtipocliente" class="input-group-text">Tipo de Cliente</label>
+                            <select class="form-select" id="idtipocliente" name="idtipocliente">
+                                {{#each tiposCliente}}
+                                    <option value="{{id}}" {{#eq id ../cliente.idtipocliente}}selected{{/eq}}>{{tipocliente}}</option>
+                                {{/each}}
+                            </select>
+                        </div> --}}
+
+                        <select class="form-select" id="idrelacion" name="idrelacion">
+                            {{#each relaciones}}
+                                <option value="{{id}}" {{#eq id ../cliente.idrelacion}}selected{{/eq}}>{{estado}}</option>
+                            {{/each}}
+                        </select>
+
+                        <select class="form-select" id="idtipocliente" name="idtipocliente">
+                            {{#each tiposCliente}}
+                                <option value="{{id}}" {{#eq id ../cliente.idtipocliente}}selected{{/eq}}>{{tipocliente}}</option>
+                            {{/each}}
+                        </select>
+
+
+                        <div class="form-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success">Actualizar</button>
+                            <button class="btn btn-danger"> <a href="/list" class="nav-link link-light" aria-current="page">Cancelar</a></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
