@@ -11,7 +11,7 @@ const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 //Settings
-app.set('port', process.env.PORT || 13301);
+app.set('port', process.env.PORT || 13302);
 app.set('views', join(__dirname, 'views'));
 
 //Configurar motors de plantilla
